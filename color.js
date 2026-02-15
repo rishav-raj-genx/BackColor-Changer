@@ -10,9 +10,11 @@ buttons.forEach((byt)=>{
     byt.style.height = "100px";
     byt.style.margin = "20px"
     byt.style.width = "100px";
+    byt.style.border="3px solid black"
  if(byt.id == "black") {
     byt.style.backgroundColor = "black";
     byt.style.color = "white";
+    byt.style.border="3px solid white"
 } else  if(byt.id == "orange") {
     byt.style.backgroundColor = "orange";
     byt.style.color = "lavender";
@@ -21,6 +23,9 @@ buttons.forEach((byt)=>{
     byt.style.color = "white";
 } else  if(byt.id == "blue") {
     byt.style.backgroundColor = "blue";
+    byt.style.color = "white";
+} else  if(byt.id == "random") {
+    byt.style.backgroundColor = "teal";
     byt.style.color = "white";
 }
 })
@@ -33,7 +38,6 @@ body.style.alignItems = "center"
 
 
 buttons.forEach((but)=>{
-    console.log(but);
     but.addEventListener('click',(color)=>{
         console.log(color);
         if(color.target.id === "blue"){
@@ -47,6 +51,16 @@ buttons.forEach((but)=>{
         }
         else if(color.target.id === 'grey') {
             body.style.backgroundColor = "grey";
-        }
+        } 
     })
 })
+
+function set(){
+    const red = Math.round(Math.random() * 255);
+    const green = Math.round(Math.random() * 255);
+    const blue = Math.round(Math.random() * 255);
+
+    const col = `rgb(${red}, ${green}, ${blue})`;
+
+    body.style.backgroundColor = col;
+}
