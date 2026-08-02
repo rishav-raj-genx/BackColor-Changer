@@ -36,7 +36,6 @@ body.style.display = "flex";
 body.style.justifyContent = "center"
 body.style.alignItems = "center"
 
-
 buttons.forEach((but)=>{
     but.addEventListener('click',(color)=>{
         console.log(color);
